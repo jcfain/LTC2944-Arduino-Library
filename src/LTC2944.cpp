@@ -241,7 +241,6 @@ uint16_t LTC2944::readWordFromRegisters(uint8_t msbAddress) {
 	_i2cPort->requestFrom(LTC2944_ADDRESS, 2);
 	msb = _i2cPort->read();
 	lsb = _i2cPort->read();
-	_i2cPort->endTransmission();
 	value = (msb << 8) | lsb;
 
 	return value;
@@ -264,7 +263,6 @@ uint8_t LTC2944::readByteFromRegister(uint8_t address) {
 
 	_i2cPort->requestFrom(LTC2944_ADDRESS, 1);
 	value = _i2cPort->read();
-	_i2cPort->endTransmission();
 
 	return value;
 }
