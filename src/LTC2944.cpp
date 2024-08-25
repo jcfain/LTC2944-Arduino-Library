@@ -49,6 +49,7 @@ uint8_t LTC2944::findExponentOfPowerOfTwo(uint16_t value) { //返回对应B[5:3]
 			return i;
 		}
 	}
+	return 0; // TODO: ????
 }
 
 uint16_t LTC2944::roundUpToPowerOfTwo(uint16_t value) { //获取大于等于value的最小的2的幂
